@@ -102,6 +102,7 @@ void Part2()
 
 	cout << true << endl; //should be 1 because true is 1
 
+
 	cout << !true << endl; // should be 0 because ! is like not
 
 	cout << ((42 == 42) || (40 > 41) && (40 < 42) || (43 == 42)) << endl; // should be 1, since one of the statements is true
@@ -129,6 +130,8 @@ void Part2()
 	float a2 = 4.2f;
 
 	cout << int(a2) << endl; // should display 4 due to the typecasting
+
+	cout << "The one for the GitHub" << endl;
 }
 
 int main()
