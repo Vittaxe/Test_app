@@ -3,7 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <cctype>
 #include <windows.h>
+#include <tchar.h>
+#include <conio.h>
+#include <strsafe.h>
+
 
 using namespace std;
 
@@ -35,32 +40,29 @@ void Part1()
 	system("PAUSE");
 	system("CLS");
 
-	int AlphabetNumber;
+	int AlphabetNumber = 0;
 
-	while (2)
+	cout << "How many letters are there in the English alphabet?" << endl;
+	cout << "Please enter your answer: ";
+	cin >> AlphabetNumber;
+
+	while (AlphabetNumber != 26)
 	{
-		cout << "How many letters are there in the English alphabet?\n";
-		cin >> AlphabetNumber;
-
-		if (cin.fail()) // no extraction took place
+		if (cin.fail())
 		{
-			cin.clear(); // reset the state bits back to goodbit so we can use ignore()
-			cin.ignore(32767, '\n'); // clear out the bad input from the stream
-			continue; // try again
-		}
-
-		if (AlphabetNumber == 26) // make sure nAge is positive
-		{
-			cout << "Yeah, it is true, there are twenty-six, did You know that in the Arabic, there are 28 letters.\n";
-			break;
+			cout << "It is not a number." << endl;
+			cout << "Please enter an integer number: ";
 		}
 		else
 		{
 			cout << "No, it is not, but good try." << endl;
+			cout << "Please try again: ";
 		}
-
-		break;
+		cin.clear();
+		cin.ignore(32767, '\n');
+		cin >> AlphabetNumber;
 	}
+	cout << "Yeah, it is true, there are twenty-six, did You know that in the Arabic, there are 28 letters." << endl;
 
 	system("PAUSE");
 	system("CLS");
